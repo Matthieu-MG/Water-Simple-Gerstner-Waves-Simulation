@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="vendor\glad\glad.c" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="src\GeneralUtils.h" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_demo.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_draw.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_tables.cpp" />
+    <ClCompile Include="vendor\ImGUI\imgui_widgets.cpp" />
+    <ClCompile Include="WaterDemo.cpp" />
+    <ClCompile Include="src\Buffer\Framebuffer.cpp" />
+    <ClCompile Include="src\Texture\Material.cpp" />
+    <ClCompile Include="src\Shader\Shader.cpp" />
+    <ClCompile Include="src\Model\Mesh.cpp" />
+    <ClCompile Include="src\Model\Model.cpp" />
+    <ClCompile Include="src\Buffer\Buffer.cpp" />
+    <ClCompile Include="src\Buffer\VertexArray.cpp" />
+    <ClCompile Include="src\Texture\TextureCubeMap.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\Texture\Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Buffer\Framebuffer.h" />
+    <ClInclude Include="src\Model\CubeMap.h" />
+    <ClInclude Include="src\Model\Quad.h" />
+    <ClInclude Include="src\Texture\Material.h" />
+    <ClInclude Include="src\Buffer\Buffer.h" />
+    <ClInclude Include="src\Buffer\VertexArray.h" />
+    <ClInclude Include="src\Buffer\VertexBufferLayout.h" />
+    <ClInclude Include="src\Shader\Shader.h" />
+    <ClInclude Include="src\Model\Mesh.h" />
+    <ClInclude Include="src\Model\Model.h" />
+    <ClInclude Include="src\Texture\Texture.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="src\Texture\TextureCubeMap.h" />
+    <ClInclude Include="vendor\assimp\include\aabb.h" />
+    <ClInclude Include="vendor\assimp\include\ai_assert.h" />
+    <ClInclude Include="vendor\assimp\include\anim.h" />
+    <ClInclude Include="vendor\assimp\include\AssertHandler.h" />
+    <ClInclude Include="vendor\assimp\include\Base64.hpp" />
+    <ClInclude Include="vendor\assimp\include\BaseImporter.h" />
+    <ClInclude Include="vendor\assimp\include\Bitmap.h" />
+    <ClInclude Include="vendor\assimp\include\BlobIOSystem.h" />
+    <ClInclude Include="vendor\assimp\include\ByteSwapper.h" />
+    <ClInclude Include="vendor\assimp\include\camera.h" />
+    <ClInclude Include="vendor\assimp\include\cexport.h" />
+    <ClInclude Include="vendor\assimp\include\cfileio.h" />
+    <ClInclude Include="vendor\assimp\include\cimport.h" />
+    <ClInclude Include="vendor\assimp\include\ColladaMetaData.h" />
+    <ClInclude Include="vendor\assimp\include\color4.h" />
+    <ClInclude Include="vendor\assimp\include\commonMetaData.h" />
+    <ClInclude Include="vendor\assimp\include\Compiler\poppack1.h" />
+    <ClInclude Include="vendor\assimp\include\Compiler\pstdint.h" />
+    <ClInclude Include="vendor\assimp\include\Compiler\pushpack1.h" />
+    <ClInclude Include="vendor\assimp\include\config.h" />
+    <ClInclude Include="vendor\assimp\include\CreateAnimMesh.h" />
+    <ClInclude Include="vendor\assimp\include\DefaultIOStream.h" />
+    <ClInclude Include="vendor\assimp\include\DefaultIOSystem.h" />
+    <ClInclude Include="vendor\assimp\include\DefaultLogger.hpp" />
+    <ClInclude Include="vendor\assimp\include\defs.h" />
+    <ClInclude Include="vendor\assimp\include\Exceptional.h" />
+    <ClInclude Include="vendor\assimp\include\Exporter.hpp" />
+    <ClInclude Include="vendor\assimp\include\fast_atof.h" />
+    <ClInclude Include="vendor\assimp\include\GenericProperty.h" />
+    <ClInclude Include="vendor\assimp\include\GltfMaterial.h" />
+    <ClInclude Include="vendor\assimp\include\Hash.h" />
+    <ClInclude Include="vendor\assimp\include\Importer.hpp" />
+    <ClInclude Include="vendor\assimp\include\importerdesc.h" />
+    <ClInclude Include="vendor\assimp\include\IOStream.hpp" />
+    <ClInclude Include="vendor\assimp\include\IOStreamBuffer.h" />
+    <ClInclude Include="vendor\assimp\include\IOSystem.hpp" />
+    <ClInclude Include="vendor\assimp\include\light.h" />
+    <ClInclude Include="vendor\assimp\include\LineSplitter.h" />
+    <ClInclude Include="vendor\assimp\include\LogAux.h" />
+    <ClInclude Include="vendor\assimp\include\Logger.hpp" />
+    <ClInclude Include="vendor\assimp\include\LogStream.hpp" />
+    <ClInclude Include="vendor\assimp\include\material.h" />
+    <ClInclude Include="vendor\assimp\include\MathFunctions.h" />
+    <ClInclude Include="vendor\assimp\include\matrix3x3.h" />
+    <ClInclude Include="vendor\assimp\include\matrix4x4.h" />
+    <ClInclude Include="vendor\assimp\include\MemoryIOWrapper.h" />
+    <ClInclude Include="vendor\assimp\include\mesh.h" />
+    <ClInclude Include="vendor\assimp\include\metadata.h" />
+    <ClInclude Include="vendor\assimp\include\NullLogger.hpp" />
+    <ClInclude Include="vendor\assimp\include\ObjMaterial.h" />
+    <ClInclude Include="vendor\assimp\include\ParsingUtils.h" />
+    <ClInclude Include="vendor\assimp\include\pbrmaterial.h" />
+    <ClInclude Include="vendor\assimp\include\postprocess.h" />
+    <ClInclude Include="vendor\assimp\include\Profiler.h" />
+    <ClInclude Include="vendor\assimp\include\ProgressHandler.hpp" />
+    <ClInclude Include="vendor\assimp\include\qnan.h" />
+    <ClInclude Include="vendor\assimp\include\quaternion.h" />
+    <ClInclude Include="vendor\assimp\include\RemoveComments.h" />
+    <ClInclude Include="vendor\assimp\include\revision.h" />
+    <ClInclude Include="vendor\assimp\include\scene.h" />
+    <ClInclude Include="vendor\assimp\include\SceneCombiner.h" />
+    <ClInclude Include="vendor\assimp\include\SGSpatialSort.h" />
+    <ClInclude Include="vendor\assimp\include\SkeletonMeshBuilder.h" />
+    <ClInclude Include="vendor\assimp\include\SmallVector.h" />
+    <ClInclude Include="vendor\assimp\include\SmoothingGroups.h" />
+    <ClInclude Include="vendor\assimp\include\SpatialSort.h" />
+    <ClInclude Include="vendor\assimp\include\StandardShapes.h" />
+    <ClInclude Include="vendor\assimp\include\StreamReader.h" />
+    <ClInclude Include="vendor\assimp\include\StreamWriter.h" />
+    <ClInclude Include="vendor\assimp\include\StringComparison.h" />
+    <ClInclude Include="vendor\assimp\include\StringUtils.h" />
+    <ClInclude Include="vendor\assimp\include\Subdivision.h" />
+    <ClInclude Include="vendor\assimp\include\texture.h" />
+    <ClInclude Include="vendor\assimp\include\TinyFormatter.h" />
+    <ClInclude Include="vendor\assimp\include\types.h" />
+    <ClInclude Include="vendor\assimp\include\vector2.h" />
+    <ClInclude Include="vendor\assimp\include\vector3.h" />
+    <ClInclude Include="vendor\assimp\include\version.h" />
+    <ClInclude Include="vendor\assimp\include\Vertex.h" />
+    <ClInclude Include="vendor\assimp\include\XmlParser.h" />
+    <ClInclude Include="vendor\assimp\include\XMLTools.h" />
+    <ClInclude Include="vendor\assimp\include\ZipArchiveIOSystem.h" />
+    <ClInclude Include="vendor\glad\glad.h" />
+    <ClInclude Include="vendor\ImGUI\imconfig.h" />
+    <ClInclude Include="vendor\ImGUI\imgui.h" />
+    <ClInclude Include="vendor\ImGUI\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\ImGUI\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\ImGUI\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="vendor\ImGUI\imgui_internal.h" />
+    <ClInclude Include="vendor\ImGUI\imstb_rectpack.h" />
+    <ClInclude Include="vendor\ImGUI\imstb_textedit.h" />
+    <ClInclude Include="vendor\ImGUI\imstb_truetype.h" />
+    <ClInclude Include="vendor\KHR\khrplatform.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Readme.md" />
+    <None Include="src\Application.h" />
+    <None Include="vendor\assimp\include\.editorconfig" />
+    <None Include="vendor\assimp\include\color4.inl" />
+    <None Include="vendor\assimp\include\config.h.in" />
+    <None Include="vendor\assimp\include\material.inl" />
+    <None Include="vendor\assimp\include\matrix3x3.inl" />
+    <None Include="vendor\assimp\include\matrix4x4.inl" />
+    <None Include="vendor\assimp\include\quaternion.inl" />
+    <None Include="vendor\assimp\include\revision.h.in" />
+    <None Include="vendor\assimp\include\SmoothingGroups.inl" />
+    <None Include="vendor\assimp\include\vector2.inl" />
+    <None Include="vendor\assimp\include\vector3.inl" />
+    <None Include="vendor\assimp\lib\assimp-vc143-mtd.dll" />
+    <None Include="vendor\assimp\lib\assimp-vc143-mtd.exp" />
+    <None Include="vendor\assimp\lib\assimp-vc143-mtd.ilk" />
+    <None Include="vendor\assimp\lib\assimp-vc143-mtd.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\awesomeface.png" />
+    <Image Include="Textures\container.jpg" />
+    <Image Include="Textures\container2.png" />
+    <Image Include="Textures\container2_specular.png" />
+    <Image Include="Textures\hatch.png" />
+    <Image Include="Textures\hatching_shade_tex.png" />
+    <Image Include="Textures\hatch_a.png" />
+    <Image Include="Textures\matrix.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vendor\assimp\lib\assimp-vc143-mtd.lib" />
+    <Library Include="vendor\glfw\glfw3.lib" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7d9cb5e6-b77e-4be7-bf2c-301a4b63990f}</ProjectGuid>
+    <RootNamespace>GraphicsProgramming</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)vendor\KHR\;$(ProjectDir)vendor\glad\;$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\include\;$(IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)vendor\KHR\;$(ProjectDir)vendor\glad\;$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\include\;$(IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)vendor\KHR\;$(ProjectDir)vendor\glad\;$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\lib\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)vendor\KHR\;$(ProjectDir)vendor\glad\;$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)vendor\glfw\;$(ProjectDir)vendor\assimp\lib\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir)vendor\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <HeapReserveSize>
+      </HeapReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir)vendor\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <HeapReserveSize>
+      </HeapReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir)vendor\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <HeapReserveSize>
+      </HeapReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir)vendor\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <HeapReserveSize>
+      </HeapReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

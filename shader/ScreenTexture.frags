@@ -1,0 +1,27 @@
+#version 330 core
+
+out vec4 FragColor;
+
+in vec2 TexPos;
+uniform sampler2D screenTexture;
+
+vec3 ACESFilm(vec3 x);
+vec2 rotate(vec2 v, float a);
+
+void main()
+{
+	FragColor = vec4( ACESFilm( texture(screenTexture, TexPos).rgb ) , 1.0);
+	FragColor = texture(screenTexture, TexPos);
+}
+
+//https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/
+vec3 ACESFilm(vec3 x)
+{
+    return clamp((x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14), 0.0, 1.0);
+}
+
+vec2 rotate(vec2 v, float a)
+{
+	return vec2( v.x*cos(a) - v.y*sin(a) ,
+				 v.x*sin(a) + v.y*cos(a) );
+}

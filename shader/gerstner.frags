@@ -1,0 +1,91 @@
+#version 330 core
+
+out vec4 FragColor;
+in vec3 Normal;
+in vec3 FragPos;
+in float Height;
+
+uniform vec3 viewPos;
+uniform samplerCube skybox;
+
+// UI Uniforms
+uniform vec3 _AmbientCol;
+uniform vec3 _DiffuseCol;
+uniform vec3 _SpecularCol;
+
+uniform float SpecStrength;
+uniform float SpecFresnelIntensity;
+uniform float Shininess;
+uniform float FoamHeight;
+
+uniform float SSS_Distortion;
+uniform float SSS_Scale;
+uniform float SSS_Power;
+uniform float SSS_Dist;
+uniform float SSS_Strength;
+
+uniform float SunHeight;
+uniform vec2 SunDirXZ;
+
+void main()
+{
+	// Setup
+	vec3 viewDir = normalize(viewPos - FragPos);
+	float distance = length(FragPos - viewPos);
+
+	float sunHeight = 0.1;
+	vec3 sunDir = normalize( vec3(SunDirXZ.x, SunHeight, SunDirXZ.y) );
+
+	// Colors
+	vec3 diff_col = _DiffuseCol;
+	vec3 ambient  = _AmbientCol;
+	vec3 spec_col = _SpecularCol;
+
+	// Normal
+	vec3 norm = normalize(Normal);
+
+	// Diffuse
+	float diffuse_fact = max(dot(sunDir, norm), 0.0);
+	vec3 diffuse = diff_col * diffuse_fact;
+	
+	// Blinn-Phong Specular
+	vec3 sunH = normalize(sunDir + viewDir);
+	float spec_fact = pow(max(dot(sunH, norm), 0.0), Shininess);
+	float spec_strength = .7;
+	vec3 specular = spec_col * spec_fact * SpecStrength;
+
+	// Fake Subsurface Scattering :: https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/ - https://colinbarrebrisebois.com/2011/03/07/gdc-2011-approximating-translucency-for-a-fast-cheap-and-convincing-subsurface-scattering-look/
+	vec3 scatterColor = vec3(0.05, 0.8, 0.7);
+	vec3 Hs = normalize(sunDir + norm * SSS_Distortion);
+	float scatter_fact = pow(max(dot(viewDir, -Hs), 0.0), SSS_Power) * SSS_Scale;
+	float dist_fact = (SSS_Dist - clamp(distance, 0.0, SSS_Dist))/SSS_Dist;
+	vec3 scatter = SSS_Strength * dist_fact * scatterColor * scatter_fact;
+
+	// Fresnel (Shlick's Approximation)
+	float F0 = .04;
+	float base = 1.0 - max(dot(viewDir, sunH), 0.0);
+	float exponential = pow(base, 5);
+	float fresnel = exponential + F0 * (1.0 - exponential);
+
+	// Reflection
+	vec3 I = normalize(-viewDir);
+	vec3 R = reflect(I, normalize(norm));
+	vec3 envCol = texture(skybox, R).rgb;
+
+	// Adding all color values
+	vec3 color = diffuse;
+	color += mix(specular, specular*fresnel, SpecFresnelIntensity);
+	color += ambient;
+	color += scatter;
+	color = mix(color, envCol*0.5, fresnel);
+
+	// Simulate foam based on height of current wave
+	if(Height >= FoamHeight && FoamHeight != 1.0)
+	{
+		float scale = 1.0 / (1.0 - FoamHeight);
+		float t = (Height - FoamHeight) * scale;
+		color = mix(color, vec3(1.0), t);
+	}
+
+	FragColor = vec4(color, 1.0);
+}
