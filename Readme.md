@@ -48,7 +48,7 @@ You can change the skybox and its path in code via the WaterDemo.cpp file:
 
 #### Demo Variables
 
-**WaveCount** - The Amount of times (sin and cos) waves are summed to create the current frame's wave geometry and normals, the more waves the more detailed the waves will be, at the expense of more processing on the vertex shader and FPS overall.  
+**WaveCount** - The Amount of times (sin and cos) waves are summed to create the current frame's wave geometry and normals, the more waves the more detailed the waves will be, at the expense of more processing on the vertex shader and less FPS overall.  
 
 **Amp** - The *starting* amplitude value of the current frame's wave geometry: in other words how high (and low) the wave geometry can be for the first wave in the sum (since the FBM implementation will reduce the Amplitude the more waves are added). 
 
