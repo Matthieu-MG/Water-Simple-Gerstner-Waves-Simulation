@@ -86,9 +86,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Application.h">
-      <Filter>Source Files\SnakeGame\General</Filter>
-    </None>
     <None Include="Readme.md" />
     <None Include="vendor\assimp\include\.editorconfig" />
     <None Include="vendor\assimp\include\color4.inl">
